@@ -12,8 +12,8 @@ export class ProductCreateComponent implements OnInit {
 
   // propLegal = "qualquerx"
   product: Product = {
-    name: 'Produto teste',
-    price: 125.15
+    name: '',
+    price: null
   }
 
   constructor(
