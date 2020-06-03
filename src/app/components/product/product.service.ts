@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 
 import { Product } from './product.model';
-import { Observable } from 'rxjs';
+import { Observable, ObservableLike } from 'rxjs';
 
 @Injectable({ // decoretor informa que poder ser injetada em outras class
   // trabalha com uma instancia compartilhada
@@ -27,5 +27,8 @@ export class ProductService {
   create(product: Product): Observable<Product> { // precisa apontar o tipo de observable q ira receber e metodo ex: post
     return this.http.post<Product>(this.baseUrl, product)
 
+  }
+  read(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.baseUrl)
   }
 }
